@@ -18,5 +18,5 @@ app.use('/', HomeRouter)
 
 app.listen(1307, function (err) {
     console.log("服务器已经启动，监听" + 1307 + "端口")
-    if (err) console.log('1314端口被占用');
+    if (err) console.log('1307端口被占用');
 })
