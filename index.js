@@ -15,6 +15,9 @@ app.use('/', HomeRouter)
 // app.get('/node/person', router.person)
 // app.get('/node/array/:search', router.array)
 
+app.use(function (req, res, next) {
+    res.status(404).sendFile(path.join(__dirname, "/web/404.html"))
+})
 
 app.listen(1307, function (err) {
     console.log("服务器已经启动，监听" + 1307 + "端口")
