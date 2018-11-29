@@ -1,6 +1,9 @@
 var path = require('path');
+var express = require('express');
+var route = express.Router();
 
-
-exports.index = function (req, res) { //渲染一个页面返回
+route.get('/', function(req, res, next){
     res.sendFile(path.join(__dirname, '../web/index.html'));
-};
+})
+
+module.exports = route;
