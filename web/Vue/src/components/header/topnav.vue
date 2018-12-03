@@ -1,15 +1,15 @@
 <template>
-    <div class="headerTitle">
-        <img class="headerLogo" src="../assets/images/logo.png" alt="图片无法加载。。。">
+    <div class="topnav">
+        <img class="headerLogo" src="../../assets/images/logo.png" alt="图片无法加载。。。">
         <ul class="header-ul">
-            <li class="header-unti">首页</li>
+            <li class="header-unti left-0">首页</li>
             <li class="header-unti left-110">公司介绍</li>
             <li class="header-unti left-220">产品介绍</li>
             <li class="header-unti left-330">正在招聘</li>
             <li class="header-unti left-440">公司环境</li>
             <li class="header-unti left-550">联系我们</li>
             <li class="RouterAnimation">
-                <img class="RouterAnimation-size" src="../assets/images/RouterAnimation.png">
+                <img class="RouterAnimation-size" src="../../assets/images/RouterAnimation.png">
             </li>
         </ul>
     </div>
@@ -17,13 +17,13 @@
 
 <script>
 export default {
-    name: 'HeaderTitle',
+    name: 'topnav'
 }
 </script>
 
 <!-- 添加“scoped”将css限制在此组件之中 -->
 <style scoped>
-    .headerTitle{
+    .topnav{
         width: 780px;
         height: 75px;
         padding-top: 15px;
@@ -42,6 +42,8 @@ export default {
         width: 660px;
         height: 60px;
         line-height: 60px;
+        cursor: pointer;
+        color: #6a6a6a;
     }
     .header-unti{
         float: left;
@@ -55,14 +57,24 @@ export default {
         z-index: -1;
         width: 110px;
         height: 60px;
-        left: 0;
-        transform: translateX(0);
-        /* transition: left 1s; */
-        transition: transform 1s;
+        /* 使用transform减小cpu消耗，增加gpu消耗*/
+        /* left: 0;
+        transition: left 0.2s; */
+        transform: translate3d(0,0,0);
+        transition: transform 0.3s;
+    }
+    /* .left-0{
+        color: #fff
+    } */
+    /* .left-110:hover,.left-220:hover,.left-330:hover,.left-440:hover,.left-550:hover{
+        color: #fff
+    } */
+    .header-unti:hover{
+        color: #fff
     }
     .left-110:hover ~ .RouterAnimation{
         /* left: 111px; */
-        transform: translateX(111px);
+        transform: translate3d(111px,0,0);
     }
     .left-220:hover ~ .RouterAnimation{
         /* left: 221px; */

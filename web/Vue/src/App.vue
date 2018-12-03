@@ -1,16 +1,16 @@
 <template>
     <div id="app">
-        <HeaderTitle></HeaderTitle>
+        <topnav></topnav>
     </div>
 </template>
 
 <script>
-import HeaderTitle from './components/HeaderTitle.vue'
+import topnav from './components/header/topnav.vue'
 
 export default {
     name: 'app',
     components: {
-        HeaderTitle
+        topnav
     }
 }
 </script>
